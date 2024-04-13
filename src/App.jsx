@@ -1,6 +1,8 @@
 import './App.css'
+import config from './config/config.js';
 
 function App() {
+  console.log('.env',config);
 
   return (
     <>
