@@ -43,11 +43,16 @@ export class AuthService {
   }
 
   async getCurrentUser() {
-    try {
-        return await this.account.get();
-    } catch (error) {
-        console.log("Appwrite serive :: getCurrentUser :: error", error);
-    }
+    // try {
+    //     const account =  await this.account.get();
+    //     if(account) {
+    //         return account;
+    //     } else {
+    //         return null;
+    //     }
+    // } catch (error) {
+    //     console.log("Appwrite serive :: getCurrentUser :: error", error);
+    // }
 
     return null;
 }

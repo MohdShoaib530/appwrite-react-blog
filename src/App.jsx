@@ -11,7 +11,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    authServices.getCurrnetUser()
+    authServices.getCurrentUser()
     .then((userData) => {
       console.log('userData', userData);
       if(userData){
