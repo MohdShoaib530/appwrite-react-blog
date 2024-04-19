@@ -1,5 +1,4 @@
-import { Container } from '../components'
-import { Postform } from '../components'
+import { Container, Postform } from '../components'
 
 
 function AddPost() {

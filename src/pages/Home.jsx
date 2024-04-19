@@ -7,13 +7,11 @@ function Home() {
     const userId = useSelector((state) => state.auth.userData?.$id)
     const [posts, setPosts] = useState([])
     useEffect(() => {
-        appwriteService.getPosts().then((res) => {
-            if(res){
-                console.log('res',res);
-                setPosts(res?.documents)
+        appwriteService.getPosts().then((posts) => {
+            if (posts) {
+                setPosts(posts?.documents)
             }
         })
-
     }, [])
 
     if (!userId) {
