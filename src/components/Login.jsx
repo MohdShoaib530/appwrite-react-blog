@@ -8,7 +8,7 @@ import authService from '../appwrite/auth.js'
 import {useForm} from 'react-hook-form'
 
 function Login() {
-  const dispatch = useDispatch
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const {register, handleSubmit} = useForm()
   const [error, setError] = useState('')
@@ -20,7 +20,7 @@ function Login() {
       if(session){
         const userData = await authService.getCurrentUser()
         if(userData){
-          dispatch(authLogin(userData))
+          dispatch(authLogin({userData}))
           navigate('/')
         }
       }
