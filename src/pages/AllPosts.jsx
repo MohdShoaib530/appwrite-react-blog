@@ -7,21 +7,24 @@ function AllPosts() {
     useEffect(() => {
         appwriteService.getPosts().then((res) => {
             if(res){
-                setPosts(res)
+                console.log('res', res);
+                setPosts(res?.documents)
             }
         })
 
     }, [])
   return (
     <div className='w-full py-8'>
-        <Container>
-            <div className='flex flex-wrap'>
-               {posts.map((post, index) => {
-               return <PostCard key={index} post={post} />
-               })}
-            </div>
-        </Container>
-    </div>
+            <Container>
+                <div className='flex flex-wrap'>
+                    {posts.map((post) => (
+                        <div key={post.$id} className='p-2 w-1/4'>
+                            <PostCard {...post} />
+                        </div>
+                    ))}
+                </div>
+            </Container>
+        </div>
   )
 }
 
