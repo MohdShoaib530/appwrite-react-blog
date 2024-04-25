@@ -1,48 +1,48 @@
-import { useEffect, useState } from 'react'
-import appwriteService from '../appwrite/conf.js'
-import { Container, PostCard } from '../components'
-import { useSelector } from 'react-redux'
+import { useEffect, useState } from "react";
+import appwriteService from "../appwrite/conf.js";
+import { Container, PostCard } from "../components";
+import { useSelector } from "react-redux";
 
 function Home() {
-    const userId = useSelector((state) => state.auth.userData?.$id)
-    const [posts, setPosts] = useState([])
-    useEffect(() => {
-        appwriteService.getPosts(userId).then((posts) => {
-            if (posts) {
-                setPosts(posts?.documents)
-            }
-        })
-    }, [])
+  const userId = useSelector((state) => state.auth.userData?.$id);
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    appwriteService.getPosts(userId).then((posts) => {
+      if (posts) {
+        setPosts(posts?.documents);
+      }
+    });
+  }, []);
 
-    if (!userId) {
-        return (
-            <div className="w-full py-8 mt-4 text-center">
-                <Container>
-                    <div className="flex flex-wrap">
-                        <div className="p-2 w-full">
-                            <h1 className="text-2xl font-bold hover:text-gray-500">
-                                Login to read posts
-                            </h1>
-                        </div>
-                    </div>
-                </Container>
-            </div>
-        )
-    }
-
+  if (!userId) {
     return (
-        <div className='w-full py-8'>
-            <Container>
-                <div className='flex flex-wrap'>
-                    {posts.map((post) => (
-                        <div key={post.$id} className='p-2 w-1/4'>
-                            <PostCard {...post} />
-                        </div>
-                    ))}
-                </div>
-            </Container>
+      <div className="w-full py-8 mt-4 text-center">
+        <Container>
+          <div className="flex flex-wrap">
+            <div className="p-2 w-full">
+              <h1 className="text-2xl font-bold hover:text-gray-500">
+                Login to read posts
+              </h1>
+            </div>
+          </div>
+        </Container>
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-full py-8">
+      <Container>
+        <div className="flex flex-wrap">
+          {posts.map((post) => (
+            <div key={post.$id} className="p-2 w-1/4">
+              <PostCard {...post} />
+            </div>
+          ))}
         </div>
-    )
+      </Container>
+    </div>
+  );
 }
 
-export default Home
+export default Home;

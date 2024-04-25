@@ -1,4 +1,5 @@
 /* eslint-disable no-useless-catch */
+import toast from 'react-hot-toast';
 import config from "../config/config";
 import { Client, Account, ID } from "appwrite";
 
@@ -33,9 +34,9 @@ export class AuthService {
     }
   }
 
-  async login({email, password}) {
+  async login({ email, password }) {
     try {
-      const userAccount = await this.account.createEmailSession(email,password);
+      const userAccount = await this.account.createEmailSession(email, password);
       return userAccount;
     } catch (error) {
       throw error;
@@ -44,26 +45,26 @@ export class AuthService {
 
   async getCurrentUser() {
     try {
-        const account =  await this.account.get();
-        if(account) {
-            return account;
-        } else {
-            return null;
-        }
+      const account = await this.account.get();
+      if (account) {
+        return account;
+      } else {
+        return null;
+      }
     } catch (error) {
-        console.log("Appwrite serive :: getCurrentUser :: error", error);
+      console.log("Appwrite serive :: getCurrentUser :: error", error);
     }
 
     return null;
-}
+  }
 
-  async logout(){
+  async logout() {
     try {
       return this.account.deleteSessions();
     } catch (error) {
       console.log('Appwrite Service:: logout:: error', error);
     }
-  
+
   }
 }
 
