@@ -37,7 +37,7 @@ function Header() {
   ];
 
   return (
-    <header className="w-full shadow bg-gray-500 rounded-lg">
+    <header className="w-full shadow bg-gray-500 ">
       <Container>
         <nav className="px-4 py-2 lg:py-3 flex lg:justify-between items-center  justify-evenly">
           <div className="">

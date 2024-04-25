@@ -36,7 +36,9 @@ function App() {
       </div>
     </div>
   ) : (
-    <div>Loading...</div>
+    <div className="text-3xl lg:text-5xl min-h-screen flex items-center justify-center">
+      Loading...
+    </div>
   );
 }
 

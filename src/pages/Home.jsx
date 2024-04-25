@@ -3,9 +3,7 @@ import appwriteService from "../appwrite/conf.js";
 import { Container, PostCard } from "../components";
 import { useSelector } from "react-redux";
 
-
 function Home() {
-  
   const userId = useSelector((state) => state.auth.userData?.$id);
   const [posts, setPosts] = useState([]);
   useEffect(() => {
@@ -22,7 +20,7 @@ function Home() {
         <Container>
           <div className="flex flex-wrap">
             <div className="p-2 w-full">
-              <h1 className="h-72 items-center flex justify-center text-2xl lg:text-4xl font-bold hover:text-gray-500">
+              <h1 className="h-72 items-center flex justify-center text-2xl lg:text-4xl font-bold text-gray-800 hover:text-gray-600">
                 {!userId
                   ? "Please login to see the posts"
                   : "No posts found, create one!"}

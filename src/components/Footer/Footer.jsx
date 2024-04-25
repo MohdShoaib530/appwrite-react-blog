@@ -46,7 +46,6 @@ function Footer() {
       <section className="relative overflow-hidden py-10 bg-gray-400 border border-t-2 border-t-black">
         <div className="relative z-10 mx-auto max-w-7xl px-4">
           <div className="-m-6 flex flex-wrap">
-            
             <div className="w-full p-6 md:w-1/2 lg:w-2/12">
               <div className="h-full">
                 <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
@@ -165,8 +164,8 @@ function Footer() {
           </div>
         </div>
       </section>
-      <div className="bg-gray-400">
-        <footer className="footer px-10  text-base-content flex flex-col lg:flex-row justify-between items-center">
+      <div className="bg-gray-400 mt-5">
+        <footer className="footer px-10  text-base-content flex flex-col lg:flex-row justify-between items-center text-gray-800">
           <div>
             <p className="text-center ">
               &copy; {year} All rights reserved. Made with{" "}
@@ -176,7 +175,7 @@ function Footer() {
               by{" "}
               <button
                 onClick={() => scrollPageUp()}
-                className="text-blue-500"
+                className="text-blue-700"
                 data-tooltip-id="on-top-tooltip"
                 data-tooltip-content="On-Top"
                 data-tooltip-place="top"
@@ -197,7 +196,7 @@ function Footer() {
                     data-tooltip-id="my-tooltip"
                     data-tooltip-content={social.name}
                     data-tooltip-place="top"
-                    className=" text-3xl  relative ease-out hover:ease-in transition duration-300 transform hover:scale-110"
+                    className="text-gray-800 text-3xl  relative ease-out hover:ease-in transition duration-300 transform hover:scale-110"
                   >
                     {social.icon}
                   </a>
