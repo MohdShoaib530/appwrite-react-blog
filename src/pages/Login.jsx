@@ -1,10 +1,10 @@
-import { Login as LoginComponents } from '../components'
+import { Login as LoginComponents } from "../components";
 function Login() {
   return (
-    <div>
-        <LoginComponents />
+    <div className="flex items-center justify-center ">
+      <LoginComponents />
     </div>
-  )
+  );
 }
 
-export default Login
+export default Login;

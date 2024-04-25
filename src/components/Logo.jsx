@@ -1,9 +1,11 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-function Logo({width = '100px', height = '100px'}) {
+import { FaBlog } from "react-icons/fa";
+
+function Logo({ width = "100px", height = "100px" }) {
   return (
-    <div>Logo</div>
-  )
+    <div>
+      <FaBlog />
+    </div>
+  );
 }
 
-export default Logo
+export default Logo;

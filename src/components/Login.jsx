@@ -36,7 +36,7 @@ function Login() {
     }
   };
   return !loading ? (
-    <div className="flex items-center justify-center w-full">
+    <div className="mx-auto  flex items-center justify-center w-10/12 mt-10 mb-10">
       <div
         className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}
       >
