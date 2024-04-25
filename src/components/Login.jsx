@@ -32,6 +32,7 @@ function Login() {
     } catch (error) {
       setError(error.message);
       toast.error("Login failed");
+      setLoading(false);
     }
   };
   return !loading ? (
