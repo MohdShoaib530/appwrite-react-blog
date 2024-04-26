@@ -1,5 +1,3 @@
-/* eslint-disable no-useless-catch */
-import toast from 'react-hot-toast';
 import config from "../config/config";
 import { Client, Account, ID } from "appwrite";
 
@@ -23,6 +21,7 @@ export class AuthService {
       );
 
       if (userAccount) {
+        console.log('appwriteurl', config.appwriteUrl);
         // call another method because if userAccount exists then login the user
         return this.login({ email, password })
 

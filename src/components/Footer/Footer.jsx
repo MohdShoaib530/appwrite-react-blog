@@ -9,6 +9,9 @@ import "./Footer.css";
 function Footer() {
   const currentDate = new Date();
   const year = currentDate.getFullYear();
+  function scrollPageUp() {
+    window.scrollTo(0, 0);
+  }
   const socialMedia = [
     {
       name: "LinkedIn",

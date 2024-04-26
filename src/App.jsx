@@ -5,18 +5,20 @@ import authService from "./appwrite/auth.js";
 import { login, logout } from "./store/authSlice.js";
 import { Header, Footer } from "./components";
 import { Outlet } from "react-router-dom";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
+import { data } from "autoprefixer";
 
 function App() {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    authService
+    const user = authService
       .getCurrentUser()
       .then((userData) => {
         if (userData) {
           dispatch(login({ userData }));
+          toast.success("Logged in successfully");
         } else {
           dispatch(logout());
         }
