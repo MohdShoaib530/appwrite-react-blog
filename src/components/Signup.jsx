@@ -15,6 +15,7 @@ function Signup() {
   const [error, setError] = useState("");
 
   const Signup = async (data) => {
+    console.log('data',data);
     setLoading(true);
     setError("");
     try {

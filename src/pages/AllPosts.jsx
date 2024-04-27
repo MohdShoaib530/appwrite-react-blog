@@ -13,9 +13,15 @@ function AllPosts() {
     appwriteService.getPosts(userId).then((res) => {
       if (res) {
         console.log("res", res);
-        setPosts(res?.documents);
-        setLoading(false);
+        if(res?.documents.length > 0){
+          setPosts(res?.documents);
+          setLoading(false);
         toast.success("Posts fetched successfully");
+        } else {
+          setLoading(false);
+          toast.error("No posts found");
+        
+        }
       }
     });
   }, []);
@@ -23,11 +29,15 @@ function AllPosts() {
     <div className="w-full py-8">
       <Container>
         <div className="flex flex-wrap">
-          {posts.map((post) => (
-            <div key={post.$id} className="p-2 w-1/2 lg:w-1/4">
-              <PostCard {...post} />
-            </div>
-          ))}
+          {
+            posts.length > 0 ? 
+            posts.map((post) => (
+              <div key={post.$id} className="p-2 w-1/2 lg:w-1/4">
+                <PostCard {...post} />
+              </div>
+            )) : (<div className="text-center w-full text-3xl lg:text-5xl">No posts found, Create One</div>)
+
+          }
         </div>
       </Container>
     </div>

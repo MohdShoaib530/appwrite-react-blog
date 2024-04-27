@@ -168,7 +168,7 @@ function Footer() {
         </div>
       </section>
       <div className="bg-gray-400 mt-5">
-        <footer className="footer px-10  text-base-content flex flex-col lg:flex-row justify-between items-center text-gray-800">
+        <footer className="footer px-10 flex flex-col lg:flex-row justify-between items-center text-gray-800">
           <div>
             <p className="text-center ">
               &copy; {year} All rights reserved. Made with{" "}

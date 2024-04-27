@@ -4,7 +4,7 @@ import { Container, PostCard } from "../components";
 import { useSelector } from "react-redux";
 
 function Home() {
-  const userId = useSelector((state) => state.auth.userData?.$id);
+  const userId = useSelector((state) => state?.auth?.userData?.$id);
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     appwriteService.getPosts(userId).then((posts) => {

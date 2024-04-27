@@ -68,6 +68,7 @@ export class Service {
     }
 
     async getPost(slug) {
+        // give an unique slug to get the post and also set a unique slug for each post
         try {
             return await this.databases.getDocument(
                 config.appwriteDatabaseId,

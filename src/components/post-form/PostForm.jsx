@@ -107,6 +107,7 @@ export default function PostForm({ post }) {
           name="content"
           control={control}
           defaultValue={getValues("content")}
+          
         />
       </div>
       <div className="lg:w-1/3 px-2">

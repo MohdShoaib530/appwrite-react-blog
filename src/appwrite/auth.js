@@ -21,7 +21,6 @@ export class AuthService {
       );
 
       if (userAccount) {
-        console.log('appwriteurl', config.appwriteUrl);
         // call another method because if userAccount exists then login the user
         return this.login({ email, password })
 
