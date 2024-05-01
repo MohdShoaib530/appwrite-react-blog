@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Logo from "../Logo";
 import { FaLinkedin, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
-import { SiUpwork } from "react-icons/si";
+import { FaUpwork } from "react-icons/fa6";
 import { Tooltip } from "react-tooltip";
 import "./Footer.css";
 
@@ -25,7 +25,7 @@ function Footer() {
     },
     {
       name: "Instagram",
-      url: "https://www.instagram.com/mohd.shoaib_123/",
+      url: "https://www.instagram.com/mohd.shoaib_91/",
       icon: <FaInstagram />,
     },
     {
@@ -35,13 +35,13 @@ function Footer() {
     },
     {
       name: "Twitter",
-      url: "https://twitter.com/MohdShoaib530",
+      url: "https://twitter.com/MohdShoaib915",
       icon: <FaTwitter />,
     },
     {
       name: "Upwork",
       url: "https://www.upwork.com/freelancers/~0102a4f512110275d7",
-      icon: <SiUpwork />,
+      icon: <FaUpwork />,
     },
   ];
   return (
